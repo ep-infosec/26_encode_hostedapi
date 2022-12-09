@@ -1,0 +1,12 @@
+#!/bin/sh -ex
+
+if [ -d "venv" ]; then
+    BIN_PATH="venv/bin/"
+else
+    BIN_PATH=""
+fi
+
+scripts/lint --check
+PYTHONPATH=. ${BIN_PATH}pytest tests -W ignore::DeprecationWarning --cov=source --cov=tests --cov-report=
+${BIN_PATH}coverage html
+${BIN_PATH}coverage report --fail-under=100 --show-missing

@@ -1,0 +1,30 @@
+# We include the major version number of packages here for API stability.
+# When adding, removing, or updating a requirement here you should install a
+# clean set of packages and freeze the versions by running this command:
+#
+# `./scripts/install --update`
+
+
+# Application
+aiofiles==0.4.*
+asyncio_redis==0.15.*
+alembic==1.*
+awesome-slugify==1.*
+databases[postgresql]==0.2.*
+jinja2==2.*
+python-multipart==0.0.5
+sentry-sdk==0.12.*
+starlette==0.13.*
+typesystem==0.2.*
+uvicorn==0.10.*
+python-dotenv==0.10.*
+httpx==0.11.*
+itsdangerous==1.*
+
+# Testing (For consistency we still want to install these to production tho.)
+black
+pytest==5.*
+pytest-asyncio==0.10.*
+pytest-cov==2.*
+requests==2.*
+sqlalchemy_utils==0.34.*
